@@ -54,7 +54,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-[#081b3e] py-24 text-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">Client's Testimonial</h2>
+<h2 className="text-4xl font-bold text-center mb-4">Client&apos;s Testimonial</h2>
         <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
           At feedbox, we are proud to have helped numerous clients achieve their digital marketing goals.
         </p>

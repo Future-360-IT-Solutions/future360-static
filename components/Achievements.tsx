@@ -2,7 +2,7 @@
 
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
-import { useRef, useEffect } from 'react'
+import { useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export default function Achievements() {

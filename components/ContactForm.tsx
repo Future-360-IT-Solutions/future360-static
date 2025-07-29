@@ -12,14 +12,14 @@ export default function ContactSection() {
     requirements: '',
   })
 
-  const handleChange = (e: any) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setForm({ ...form, [e.target.name]: e.target.value })
+}
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    alert('Form submitted!')
-  }
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  alert('Form submitted!')
+}
 
   return (
     <section id="contact" className="bg-[#061136] text-white py-20 px-4">
