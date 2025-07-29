@@ -1,0 +1,101 @@
+'use client'
+
+import { useKeenSlider } from 'keen-slider/react'
+import 'keen-slider/keen-slider.min.css'
+import { useRef } from 'react'
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+
+export default function Testimonials() {
+  const sliderRef = useRef(null)
+  const [sliderInstanceRef, slider] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slides: {
+      perView: 2,
+      spacing: 24,
+    },
+    breakpoints: {
+      '(max-width: 768px)': {
+        slides: { perView: 1, spacing: 16 },
+      },
+    },
+  })
+
+  const testimonials = [
+    {
+      name: 'Saptarshi Chakraborty',
+      role: 'Co Founder - Tutology, Lonetree',
+      feedback:
+        "Working with FeedBox was a real pleasure. I found them as someone with great experience and deep knowledge of Marketing solutions. They are ready to deal with difficult situations and solve the problems on time. Most definitely someone I'd want to work with again.",
+      stars: 5,
+    },
+    {
+      name: 'Rahul Chopra',
+      role: 'Product Manager, HomeRun',
+      feedback:
+        "We are absolutely thrilled with the promotional launch video that Feedbox created for our mobile app. From the very beginning, the experience was fantastic. They took the time to understand our brand, audience, and message we wanted to convey. Kudos!",
+      stars: 5,
+    },
+    {
+      name: 'Sneha Kapoor',
+      role: 'Head of Digital, Nosh Co.',
+      feedback:
+        "Engagement up 200% since Feedbox took over our digital strategy. Their insights and delivery are spot on every time.",
+      stars: 5,
+    },
+    {
+      name: 'Amit Sharma',
+      role: 'CEO, FreshMart',
+      feedback:
+        "Feedbox helped us launch a campaign that tripled our reach. Their attention to detail is unmatched.",
+      stars: 5,
+    },
+  ]
+
+  return (
+    <section id="testimonials" className="bg-[#081b3e] py-24 text-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-4">Client's Testimonial</h2>
+        <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+          At feedbox, we are proud to have helped numerous clients achieve their digital marketing goals.
+        </p>
+
+        <div className="relative">
+          {/* Arrow Left */}
+          <button
+            onClick={() => slider.current?.prev()}
+            className="absolute top-1/2 left-0 z-10 transform -translate-y-1/2 text-white bg-transparent hover:text-blue-400 transition"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          {/* Slider */}
+          <div ref={sliderInstanceRef} className="keen-slider px-8">
+            {testimonials.map((item, idx) => (
+              <div
+                key={idx}
+                className="keen-slider__slide bg-[#0e2654] text-white border border-gray-500/30 p-6 rounded-xl shadow-lg"
+              >
+                <h3 className="text-xl font-semibold">{item.name}</h3>
+                <p className="font-medium text-gray-300 mb-3">{item.role}</p>
+                <p className="text-sm leading-relaxed text-gray-200 mb-4">{item.feedback}</p>
+                <div className="flex gap-1 text-yellow-400">
+                  {Array.from({ length: item.stars }).map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" stroke="currentColor" />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Arrow Right */}
+          <button
+            onClick={() => slider.current?.next()}
+            className="absolute top-1/2 right-0 z-10 transform -translate-y-1/2 text-white bg-transparent hover:text-blue-400 transition"
+          >
+            <ChevronRight size={28} />
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
