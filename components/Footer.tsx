@@ -1,86 +1,86 @@
 'use client'
 
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  ArrowUp,
-} from 'lucide-react'
+import { Facebook, Instagram, Linkedin } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowUp } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#061136] text-white relative pt-16 pb-10 px-6">
+    <footer className="bg-[#030812] text-white pt-16 pb-10 px-6 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        {/* Logo + About */}
+        {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-blue-400 mb-3">Feed<span className="text-white">Box</span></h2>
-          <p className="text-sm text-gray-300">
-            Offering comprehensive digital marketing solutions to help businesses succeed online.
+          <Image src="/logo.png" alt="F360 Logo" width={100} height={40} className="h-10 w-auto mb-4" />
+          <p className="text-sm text-white/50 leading-relaxed">
+            Innovate. Integrate. Elevate. — Helping modern businesses grow smarter, faster, and better.
           </p>
         </div>
 
-        {/* Explore More */}
+        {/* Explore */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Explore More</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#about" className="hover:text-white transition">➞ About Us</a></li>
-            <li><a href="#contact" className="hover:text-white transition">➞ Contact Us</a></li>
-            <li><a href="#services" className="hover:text-white transition">➞ Services</a></li>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Explore</h3>
+          <ul className="space-y-2 text-sm text-white/40">
+            <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#services" className="hover:text-white transition-colors">Our Services</a></li>
+            <li><a href="#work" className="hover:text-white transition-colors">Our Work</a></li>
+            <li><a href="#process" className="hover:text-white transition-colors">Our Process</a></li>
+            <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* Contact */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
-          <p className="text-sm text-gray-300 mb-2">For Business Queries: +91-7869909760</p>
-          <p className="text-sm text-gray-300">Email ID: contact@feedbox.tech</p>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Contact</h3>
+          <div className="space-y-2 text-sm text-white/40">
+            <p>📞 +91 8889995985</p>
+            <p>✉️ team@future360itsolutions.com</p>
+            <p>📍 Vijay Nagar, Indore (MP)</p>
+          </div>
         </div>
 
-        {/* Social Media */}
+        {/* Social */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Follow Us On</h3>
-          <div className="flex flex-wrap gap-4 text-sm text-gray-300">
-            <a href="#" className="flex items-center gap-2 hover:text-white transition">
-              <Facebook className="text-blue-600" size={18} /> Facebook
-            </a>
-            <a href="#" className="flex items-center gap-2 hover:text-white transition">
-              <Instagram className="text-pink-500" size={18} /> Instagram
-            </a>
-            <a href="#" className="flex items-center gap-2 hover:text-white transition">
-              <Linkedin className="text-blue-500" size={18} /> LinkedIn
-            </a>
-            <a href="#" className="flex items-center gap-2 hover:text-white transition">
-              <Twitter className="text-sky-400" size={18} /> Twitter
-            </a>
-            <a href="#" className="flex items-center gap-2 hover:text-white transition">
-              <img src="/whatsapp.png" className="w-4 h-4" /> WhatsApp
-            </a>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/70 mb-4">Follow Us</h3>
+          <div className="flex gap-3 flex-wrap">
+            {[
+              { icon: Facebook, href: 'https://www.facebook.com/share/1FhLb2Ej8t/' },
+              { icon: Instagram, href: 'https://www.instagram.com/f360itsolutions' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/company/future360itsolutions' },
+            ].map(({ icon: Icon, href }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600/50 hover:border-blue-500/50 transition-all duration-200"
+              >
+                <Icon size={16} className="text-white" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Feedbox. All Rights Reserved
+      <div className="border-t border-white/5 mt-10 pt-6 text-center text-xs text-white/20">
+        © {new Date().getFullYear()} Future 360 IT Solutions. All Rights Reserved.
       </div>
 
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp */}
       <a
-        href="https://wa.me/917869909760"
+        href="https://wa.me/918889995985"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 left-5 z-50"
+        className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center shadow-lg shadow-green-900/50 transition-all duration-200 hover:scale-110"
       >
-        <img src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" />
+        <Image src="/whatsapp.png" alt="WhatsApp" width={24} height={24} className="w-6 h-6" />
       </a>
 
-      {/* Scroll to Top */}
+      {/* Scroll to top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-5 right-5 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition z-50"
+        className="fixed bottom-6 right-6 w-10 h-10 bg-blue-600 hover:bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 z-50"
       >
-        <ArrowUp size={20} />
+        <ArrowUp size={18} />
       </button>
     </footer>
   )

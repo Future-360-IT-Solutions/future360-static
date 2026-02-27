@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
@@ -7,7 +8,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export default function Achievements() {
   const images = [
-    { src: '/achievements/1.jpg', caption: 'Feedbox featured on Republic TV' },
+    { src: '/achievements/1.jpg', caption: 'Future 360 featured on Republic TV' },
     { src: '/achievements/2.jpg', caption: 'Met Central Minister Narayan Rane ji' },
     { src: '/achievements/3.jpg', caption: 'IITD Startup featured in National Paper' },
     { src: '/achievements/4.jpg', caption: 'Awarded by MP Govt for digital work' },
@@ -68,9 +69,11 @@ export default function Achievements() {
                     {item.caption}
                   </div>
                 )}
-                <img
+                <Image
                   src={item.src}
                   alt={`Achievement ${index + 1}`}
+                  width={400}
+                  height={320}
                   className="w-full h-[320px] object-contain p-4"
                 />
               </div>
