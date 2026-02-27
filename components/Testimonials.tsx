@@ -2,11 +2,11 @@
 
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
-import { useRef } from 'react'
+// useRef removed
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
 
 export default function Testimonials() {
-  const sliderRef = useRef(null)
+  // sliderRef removed - unused
   const [sliderInstanceRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: {
@@ -25,28 +25,28 @@ export default function Testimonials() {
       name: 'Saptarshi Chakraborty',
       role: 'Co Founder - Tutology, Lonetree',
       feedback:
-        "Working with FeedBox was a real pleasure. I found them as someone with great experience and deep knowledge of Marketing solutions. They are ready to deal with difficult situations and solve the problems on time. Most definitely someone I'd want to work with again.",
+        "Working with Future 360 was a real pleasure. I found them as someone with great experience and deep knowledge of Marketing solutions. They are ready to deal with difficult situations and solve the problems on time. Most definitely someone I'd want to work with again.",
       stars: 5,
     },
     {
       name: 'Rahul Chopra',
       role: 'Product Manager, HomeRun',
       feedback:
-        "We are absolutely thrilled with the promotional launch video that Feedbox created for our mobile app. From the very beginning, the experience was fantastic. They took the time to understand our brand, audience, and message we wanted to convey. Kudos!",
+        "We are absolutely thrilled with the promotional launch video that Future 360 IT Solutions created for our mobile app. From the very beginning, the experience was fantastic. They took the time to understand our brand, audience, and message we wanted to convey. Kudos!",
       stars: 5,
     },
     {
       name: 'Sneha Kapoor',
       role: 'Head of Digital, Nosh Co.',
       feedback:
-        "Engagement up 200% since Feedbox took over our digital strategy. Their insights and delivery are spot on every time.",
+        "Engagement up 200% since Future 360 IT Solutions took over our digital strategy. Their insights and delivery are spot on every time.",
       stars: 5,
     },
     {
       name: 'Amit Sharma',
       role: 'CEO, FreshMart',
       feedback:
-        "Feedbox helped us launch a campaign that tripled our reach. Their attention to detail is unmatched.",
+        "Future 360 IT Solutions helped us launch a campaign that tripled our reach. Their attention to detail is unmatched.",
       stars: 5,
     },
   ]
@@ -56,7 +56,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4">
 <h2 className="text-4xl font-bold text-center mb-4">Client&apos;s Testimonial</h2>
         <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-          At feedbox, we are proud to have helped numerous clients achieve their digital marketing goals.
+          At Future 360 IT Solutions, we are proud to have helped numerous clients achieve their digital marketing goals.
         </p>
 
         <div className="relative">

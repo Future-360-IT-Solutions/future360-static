@@ -1,23 +1,45 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import AboutUs from '@/components/AboutsUs'
+import ExpertiseStats from '@/components/ExpertiseStats'
+import MeetTheTeam from '@/components/MeetTheTeam'
+import OurWork from '@/components/OurWork'
+import LayoutShowcase from '@/components/LayoutShowcase'
 import Services from '@/components/Services'
-import Testimonials from '@/components/Testimonials'
-import Clients from '@/components/Clients'
+import OurProcess from '@/components/OurProcess'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
-import About from '@/components/AboutsUs'
+import Clients from '@/components/Clients'
 import Achievements from '@/components/Achievements'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      {/* Page 1: Cover/Hero */}
       <Hero />
+      {/* Client logos strip */}
       <Clients />
-      <About />
+      {/* Page 2: About Us */}
+      <AboutUs />
+      {/* Page 3: Experience & Expertise */}
+      <ExpertiseStats />
+      {/* Page 4: Meet the Team */}
+      <MeetTheTeam />
+      {/* Page 5: Our Work */}
+      <OurWork />
+      {/* Page 6: Layout Showcase */}
+      <LayoutShowcase />
+      {/* Page 7: Our Services */}
       <Services />
-      <Achievements /> 
+      {/* Achievements */}
+      <Achievements />
+      {/* Testimonials */}
       <Testimonials />
+      {/* Page 8: Our Process */}
+      <OurProcess />
+      {/* Page 9: Contact Us */}
       <ContactForm />
       <Footer />
     </>
